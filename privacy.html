@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ja" data-lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wari-Tsuke | Privacy</title>
+  <meta name="description" content="Wari-Tsuke Privacy Policy." />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body class="bg">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <span class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>Wari-Tsuke <span class="subtitle" data-ja="プライバシー" data-en="Privacy">プライバシー</span></h1>
+        </div>
+      </span>
+      <div class="spacer"></div>
+      <div class="lang">
+        <button id="lang-ja" type="button" aria-pressed="true">JA</button>
+        <button id="lang-en" type="button" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card page">
+      <h2 data-ja="プライバシーポリシー" data-en="Privacy Policy">プライバシーポリシー</h2>
+      <div class="meta" data-ja="最終更新日：2026-06-19" data-en="Last updated: 2026-06-19">
+        最終更新日：2026-06-19
+      </div>
+
+      <h3 data-ja="1. 収集する情報" data-en="1. Information We Collect">1. 収集する情報</h3>
+      <p data-ja="本アプリは、基本機能（計算）を提供するために、利用者の個人情報の入力を必要としません。"
+         data-en="The App does not require you to enter personal information to use its core calculation features.">
+        本アプリは、基本機能（計算）を提供するために、利用者の個人情報の入力を必要としません。
+      </p>
+      <ul>
+        <li data-ja="入力した数値は端末上で計算に使用され、提供者のサーバーへ送信されません。"
+            data-en="Numbers you input are used for on-device calculations and are not sent to the provider’s servers.">
+          入力した数値は端末上で計算に使用され、提供者のサーバーへ送信されません。
+        </li>
+        <li data-ja="本アプリはアナリティクス、広告、クラッシュレポートのSDKを使用しておらず、利用状況の収集も行いません。"
+            data-en="The App uses no analytics, advertising, or crash-reporting SDKs and collects no usage data.">
+          本アプリはアナリティクス、広告、クラッシュレポートのSDKを使用しておらず、利用状況の収集も行いません。
+        </li>
+      </ul>
+
+      <h3 data-ja="2. 利用目的" data-en="2. Purpose of Use">2. 利用目的</h3>
+      <p data-ja="本アプリは利用者情報を収集しません。入力値は端末内での計算にのみ使用されます。"
+         data-en="The App does not collect user information. Your inputs are used only for on-device calculation.">
+        本アプリは利用者情報を収集しません。入力値は端末内での計算にのみ使用されます。
+      </p>
+
+      <h3 data-ja="3. 第三者提供" data-en="3. Sharing with Third Parties">3. 第三者提供</h3>
+      <p data-ja="本アプリは、利用者の入力値を第三者に提供しません。"
+         data-en="The App does not share your input values with third parties.">
+        本アプリは、利用者の入力値を第三者に提供しません。
+      </p>
+
+      <h3 data-ja="4. お問い合わせ" data-en="4. Contact">4. お問い合わせ</h3>
+      <p data-ja="プライバシーに関するお問い合わせは、サポートページよりご連絡ください。"
+         data-en="For privacy-related inquiries, please contact us via the Support page.">
+        プライバシーに関するお問い合わせは、サポートページよりご連絡ください。
+      </p>
+      <p>
+        <a href="https://keyroid.github.io/ks-app/support.html"
+           data-ja="サポートページを開く" data-en="Open the Support page">サポートページを開く</a>
+      </p>
+    </section>
+
+    <footer class="card footer">
+      <div data-ja="© Wari-Tsuke — K's App（開発: KENTA OSAWA）"
+           data-en="© Wari-Tsuke — K's App (developed by KENTA OSAWA)">© Wari-Tsuke — K's App（開発: KENTA OSAWA）</div>
+    </footer>
+  </main>
+
+  <script src="assets/app.js"></script>
+  <script>
+    document.querySelectorAll("[data-ja][data-en]").forEach(el=>{
+      const lang = document.documentElement.getAttribute("data-lang") || "ja";
+      el.textContent = (lang === "en") ? el.getAttribute("data-en") : el.getAttribute("data-ja");
+    });
+    const obs = new MutationObserver(()=>{
+      const lang = document.documentElement.getAttribute("data-lang") || "ja";
+      document.querySelectorAll("[data-ja][data-en]").forEach(el=>{
+        el.textContent = (lang === "en") ? el.getAttribute("data-en") : el.getAttribute("data-ja");
+      });
+    });
+    obs.observe(document.documentElement, { attributes:true, attributeFilter:["data-lang"]});
+  </script>
+</body>
+</html>
