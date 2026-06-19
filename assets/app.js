@@ -1,6 +1,6 @@
 (function () {
   const STORAGE_KEY = "wari_tsuke_lang";
-  const DEFAULT_LANG = "ja";
+  const DEFAULT_LANG = "en";
 
   function setLang(lang) {
     document.documentElement.setAttribute("lang", lang === "en" ? "en" : "ja");
@@ -20,7 +20,7 @@
     if (saved === "en" || saved === "ja") return saved;
 
     const nav = (navigator.language || "").toLowerCase();
-    if (nav.startsWith("en")) return "en";
+    if (nav.startsWith("ja")) return "ja";
     return DEFAULT_LANG;
   }
 
